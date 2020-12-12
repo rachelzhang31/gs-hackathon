@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import USAMap from 'react-usa-map';
-
 class Home extends Component {
     mapHandler = (event) => {
         alert(event.target.dataset.name);
@@ -27,6 +26,7 @@ class Home extends Component {
                 <h1 style={{color: 'black'}}>Covid Impact by State</h1>
                 <USAMap customize={this.statesCustomConfig()} onClick={this.mapHandler} />
                 <h1 style={{color: 'black', fontSize: 20}}>Dataset provided by the CDC and accessed via Goldman Sachs's Marquee API</h1>
+
             </div>
         );
     }
