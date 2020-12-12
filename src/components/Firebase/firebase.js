@@ -1,10 +1,11 @@
 import app from 'firebase/app';
 // import 'firebase/auth';
-// import 'firebase/firestore';
+import 'firebase/firestore';
 import 'firebase/functions';
+// import 'firebase/analytics';
+// import "firebase/performance";
 
-
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+// Prod
 const config = {
   apiKey: "AIzaSyCPc8HYjEVQlp_xTgY-Nx2LBA_F5K52zDE",
   authDomain: "gs-hackathon.firebaseapp.com",
@@ -15,13 +16,15 @@ const config = {
   measurementId: "G-X3VLM33XE4"
 };
 
+
+
 class Firebase {
   constructor() {
     app.initializeApp(config);
 
     this.app = app;
     // this.auth = app.auth();
-    // this.db = app.firestore();
+    this.db = app.firestore();
     this.functions = app.functions();
 
     // this.perf = app.performance();

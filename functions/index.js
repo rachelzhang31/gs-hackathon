@@ -1,20 +1,11 @@
 const functions = require('firebase-functions');
-
-// // Create and Deploy Your First Cloud Functions
-// // https://firebase.google.com/docs/functions/write-firebase-functions
-//
-// exports.helloWorld = functions.https.onRequest((request, response) => {
-//   functions.logger.info("Hello logs!", {structuredData: true});
-//   response.send("Hello from Firebase!");
-// });
-
-
 const got = require("got");
+const oauth2 = require("simple-oauth2");
 
 const credentials = {
   client: {
     id: "7bed2a82e4524b27a3fdbe793a43717a",
-    secret: "bbd67af0ed231d86ba3a5fa45746efb5f9828755ea7fd791f6a9e3509ba8343d",
+    secret: "fcf7fed771383eda66cc4b3bb1411e61f4e23921b3571c36a6aa6cfa2a14a5ad",
   },
   auth: {
     tokenHost: "https://idfs.gs.com",
@@ -23,8 +14,6 @@ const credentials = {
   },
 };
 
-const oauth2 = require("simple-oauth2");
-
 
 const callApi = async (t) => {
   const opts = {
@@ -32,53 +21,47 @@ const callApi = async (t) => {
       Authorization: "Bearer " + t.token.access_token,
       "Content-Type": "application/json",
     },
+    body: JSON.stringify({ 
+      where: {
+        countryId: ["US"],
+      },
+      startDate: "2020-01-21",
+      limit: 50,
+    }),
   };
-    // const args = {
-    //     "headers": {
-    //         "Authorization": "Bearer " + t.token.access_token,
-    //         "Content-Type": "application/json",
-    //     },
-    //     // "body": {
-    //     //         "where": {
-    //     //             "countryId": ["US"]
-    //     //         },
-    //     //         "startDate": "2020-01-21",
-    //     //         "limit": 50
-    //     //    },
-    //     // // "json": true
-    // };
 
-    // try {
-    //   const response  = await got.post("https://api.marquee.gs.com/v1/data/COVID19_US_DAILY_CDC/query", args);
-    //   functions.logger.log('response', response);
-    // }
-    // catch (error) {
-    //   functions.logger.error('API Call Error', error);
-    // }
+    try {
+      const {body} = await got.post("https://api.marquee.gs.com/v1/data/COVID19_US_DAILY_CDC/query", opts)
+      functions.logger.log('body', body);
 
-    return got('https://api.marquee.gs.com/v1/users/self', opts)
-        .then(r => r.body)
-    ;
-        // .then(response => functions.logger.log(response.body), console.error.bind(console)).catch(err => functions.logger.error(err))
+      return body;
+
+    }
+    catch (error) {
+      functions.logger.error('API Call Error', error);
+      return error;
+    }
 };
 
 
-exports.getAPIData = functions.https.onRequest( async (req, res) => {
-  const client  = new oauth2.ClientCredentials(credentials);
+exports.getCovidData = functions.https.onCall( async (req, res) => {
+  const client = new oauth2.ClientCredentials(credentials);
+
+  // res.set("Access-Control-Allow-Origin", "*");
+  // res.set("Access-Control-Allow-Methods", "GET");
+  // res.set("Access-Control-Allow-Headers", "Authorization");
+  // res.set("Access-Control-Max-Age", "3600");
 
   try {
-    const accessToken = await client.getToken(credentials);
-    functions.logger.log('accessToken', accessToken);
+    const token = await client.getToken(credentials);
+    const apiResponse = await callApi(token);
 
-    const apiResponse = await callApi(accessToken);
-    functions.logger.log('apiResponse', apiResponse);
+    functions.logger.log("apiResponse", apiResponse);
+    return apiResponse;
+    // res.send(apiResponse);
   } catch (error) {
-    functions.logger.error('Access Token error', error.message);
+    functions.logger.error("API Error", error.message);
+
+
   }
-  return;
-  // client.getToken({})
-  //   .then((r) => client.accessToken.create(r))
-  //   .then(callApi)
-  //   .then(console.log, console.error)
-  //   .catch((err) => functions.logger.error(err));
- });
+});
