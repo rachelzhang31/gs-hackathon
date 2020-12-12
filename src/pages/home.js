@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import USAMap from 'react-usa-map';
+import LineChart from './linechart.js';
 
 // Firebase
 import {FirebaseContext} from '../components/Firebase';
@@ -38,7 +39,8 @@ class Home extends Component {
 
     render() {
         return (
-          <div className="App">
+        <div>
+          <div className="App" style={{marginBottom: 10}}>
             <FirebaseContext.Consumer>
               {(firebase) => <APIButton firebase={firebase} />}
             </FirebaseContext.Consumer>
@@ -51,6 +53,10 @@ class Home extends Component {
               Dataset provided by the CDC and accessed via Goldman Sachs's
               Marquee API
             </h6>
+          </div>
+          <div>
+              <LineChart/>
+          </div>
           </div>
         );
     }
