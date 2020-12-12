@@ -1,29 +1,24 @@
-import { useEffect } from "react";
-import "./App.css";
+import React, { Component } from 'react';
+import USAMap from "react-usa-map";
+import Navbar from './components/Navbar';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import './App.css';
+import MapTest from './pages/home.js';
+import About from './pages/about.js';
+function App(){
+    return (
+      <Router>
+        <Navbar />
+        <Switch>
+          <div class="App-header">
+          <Route path="/" exact component = {MapTest}/>
+          <Route path="/about" exact component = {About}/>
+          </div>
+        </Switch>
+      </Router>
+      
+    );
+  }
 
-// Firebase
-import {FirebaseContext} from './components/Firebase';
-const APIButton = (props) => {
-  const { firebase, ...rest } = props;
-
-  const handleClick = () => {
-    const apiCall = firebase.app.functions().httpsCallable("getAPIData");
-
-    console.log(apiCall());
-  };
-
-  return <button onClick={handleClick}>Call API (hopefully)</button>;
-};
-
-const App = () => {
-  
-  return (
-    <div className="App">
-      <FirebaseContext.Consumer>
-        {firebase => <APIButton firebase={firebase} />}
-      </FirebaseContext.Consumer>
-    </div>
-  );
-};
-
+ 
 export default App;
