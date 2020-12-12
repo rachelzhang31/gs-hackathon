@@ -2,6 +2,23 @@ import React, { Component } from 'react';
 import USAMap from 'react-usa-map';
 import LineChart from './linechart.js';
 
+
+// Firebase
+import {FirebaseContext} from '../components/Firebase';
+
+const APIButton = props => {
+    const {firebase, ...rest} = props;
+
+    const getCovidData = firebase.app.functions().httpsCallable('getCovidData');
+    const handleAPICall = async () => {
+        const responseStr = await getCovidData();
+        const res = JSON.parse(responseStr);
+        console.log(res);
+    }
+    return (
+        <button onClick = {handleAPICall} {...rest}>Call API </button>
+    );
+}
 class Home extends Component {
 
     constructor(props){
@@ -35,6 +52,9 @@ class Home extends Component {
         return (
             <div>
             <div className="App" style={{marginBottom: 10}}>
+            <FirebaseContext.Consumer>
+              {(firebase) => <APIButton firebase={firebase} />}
+            </FirebaseContext.Consumer>
                 <h1 style={{color: 'black'}}>Covid Impact by State</h1>
                 <USAMap customize={this.statesCustomConfig()} onClick={this.mapHandler} />
                 <h6 style={{color: 'black'}}>Dataset provided by the CDC and accessed via Goldman Sachs's Marquee API</h6>
