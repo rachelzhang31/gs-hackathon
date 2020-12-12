@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import USAMap from "react-usa-map";
 import Navbar from './components/Navbar';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import './App.css';
@@ -9,12 +8,12 @@ function App(){
     return (
       <Router basename="/gs-hackathon">
         <Navbar />
+        <div className="App-header">
         <Switch>
-          <div class="App-header">
-          <Route path="/gs-hackathon" exact component = {Home}/>
+          <Route path="/" exact component = {Home}/>
           <Route path="/about" exact component = {About}/>
-          </div>
         </Switch>
+        </div>
       </Router>
       
     );
