@@ -1,23 +1,29 @@
-import './App.css';
+import { useEffect } from "react";
+import "./App.css";
 
-function App() {
+// Firebase
+import {FirebaseContext} from './components/Firebase';
+const APIButton = (props) => {
+  const { firebase, ...rest } = props;
+
+  const handleClick = () => {
+    const apiCall = firebase.app.functions().httpsCallable("getAPIData");
+
+    console.log(apiCall());
+  };
+
+  return <button onClick={handleClick}>Call API (hopefully)</button>;
+};
+
+const App = () => {
+  
   return (
     <div className="App">
-      <header className="App-header">
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <FirebaseContext.Consumer>
+        {firebase => <APIButton firebase={firebase} />}
+      </FirebaseContext.Consumer>
     </div>
   );
-}
+};
 
 export default App;

@@ -1,7 +1,7 @@
 import app from 'firebase/app';
 // import 'firebase/auth';
 // import 'firebase/firestore';
-// import 'firebase/functions';
+import 'firebase/functions';
 
 
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
@@ -22,7 +22,7 @@ class Firebase {
     this.app = app;
     // this.auth = app.auth();
     // this.db = app.firestore();
-    // this.functions = app.functions();
+    this.functions = app.functions();
 
     // this.perf = app.performance();
     // this.analytics = app.analytics();
