@@ -11,8 +11,8 @@ function App(){
         <Navbar />
         <Switch>
           <div class="App-header">
-          <Route path="/gs-hackathon" exact component = {MapTest}/>
-          <Route path="/gs-hackathon/about" exact component = {About}/>
+          <Route path="/" exact component = {MapTest}/>
+          <Route path="/about" exact component = {About}/>
           </div>
         </Switch>
       </Router>
