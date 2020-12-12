@@ -47,18 +47,12 @@ const callApi = async (t) => {
 exports.getCovidData = functions.https.onCall( async (req, res) => {
   const client = new oauth2.ClientCredentials(credentials);
 
-  // res.set("Access-Control-Allow-Origin", "*");
-  // res.set("Access-Control-Allow-Methods", "GET");
-  // res.set("Access-Control-Allow-Headers", "Authorization");
-  // res.set("Access-Control-Max-Age", "3600");
-
   try {
     const token = await client.getToken(credentials);
     const apiResponse = await callApi(token);
 
     functions.logger.log("apiResponse", apiResponse);
     return apiResponse;
-    // res.send(apiResponse);
   } catch (error) {
     functions.logger.error("API Error", error.message);
 
