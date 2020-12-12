@@ -23,9 +23,10 @@ class Home extends Component {
     render() {
         return (
             <div className="App">
-                <h1 style={{color: 'black'}}>Covid Impact by State</h1>
+                <br></br>
+                <h1 style={{color: 'white'}}>Covid Impact by State</h1>
                 <USAMap customize={this.statesCustomConfig()} onClick={this.mapHandler} />
-                <h6 style={{color: 'black'}}>Dataset provided by the CDC and accessed via Goldman Sachs's Marquee API</h6>
+                <h6 style={{color: 'white'}}>Dataset provided by the CDC and accessed via Goldman Sachs's Marquee API</h6>
             </div>
         );
     }
