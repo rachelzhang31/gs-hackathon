@@ -1,6 +1,17 @@
 import React, { Component } from 'react';
 import USAMap from 'react-usa-map';
+import LineChart from './linechart.js';
+
 class Home extends Component {
+
+    constructor(props){
+        super(props);
+        this.state = {
+            state: ''
+        }
+    }
+
+
     mapHandler = (event) => {
         alert(event.target.dataset.name);
     };
@@ -22,10 +33,15 @@ class Home extends Component {
 
     render() {
         return (
-            <div className="App">
+            <div>
+            <div className="App" style={{marginBottom: 10}}>
                 <h1 style={{color: 'black'}}>Covid Impact by State</h1>
                 <USAMap customize={this.statesCustomConfig()} onClick={this.mapHandler} />
                 <h6 style={{color: 'black'}}>Dataset provided by the CDC and accessed via Goldman Sachs's Marquee API</h6>
+            </div>
+            <div>
+                <LineChart/>
+            </div>
             </div>
         );
     }
