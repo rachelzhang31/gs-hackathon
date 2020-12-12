@@ -3,7 +3,7 @@ import USAMap from "react-usa-map";
 import Navbar from './components/Navbar';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import './App.css';
-import MapTest from './pages/home.js';
+import Home from './pages/home.js';
  
 function App(){
     return (
@@ -11,7 +11,7 @@ function App(){
         <Navbar />
         <div className="App">
       <header className="App-header">
-        <MapTest/>
+        <Home/>
       </header>
     </div>
       </Router>
