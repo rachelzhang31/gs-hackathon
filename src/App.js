@@ -1,30 +1,11 @@
-
 import React, { Component } from 'react';
 import './App.css';
 import Home from './pages/home.js';
 import USAMap from "react-usa-map";
 import Navbar from './components/Navbar';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-
-class App extends Component {
-  /* mandatory */
-  mapHandler = (event) => {
-    alert(event.target.dataset.name);
-  };
- 
-  /* optional customization of filling per state and calling custom callbacks per state */
-  statesCustomConfig = () => {
-    return {
-      "NJ": {
-        fill: "navy",
-        clickHandler: (event) => console.log('Custom handler for NJ', event.target.dataset)
-      },
-      "NY": {
-        fill: "#CC0000"
-      }
-    };
-  };
- 
+import './App.css';
+import MapTest from './pages/home.js';
  
   render() {
     return (
@@ -33,6 +14,7 @@ class App extends Component {
         <div className="App">
       <header className="App-header">
         <Home/>
+        <MapTest/>
       </header>
     </div>
       </Router>
@@ -40,4 +22,6 @@ class App extends Component {
     );
   }
 }
+
+ 
 export default App;

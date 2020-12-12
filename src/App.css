@@ -26,4 +26,15 @@ path:hover {
 @font-face {
   font-family: 'GoldmanSans_Rg';
   src: local('GoldmanSans'),url(./fonts/GoldmanSans_Rg.ttf) format('truetype');
+
+}
+.App-header {
+  background-color: #ffffff;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
 }
