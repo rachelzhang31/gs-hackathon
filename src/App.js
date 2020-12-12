@@ -3,39 +3,22 @@ import './App.css'; /* optional for styling like the :hover pseudo-class */
 import USAMap from "react-usa-map";
 import Navbar from './components/Navbar';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-
-class App extends Component {
-  /* mandatory */
-  mapHandler = (event) => {
-    alert(event.target.dataset.name);
-  };
- 
-  /* optional customization of filling per state and calling custom callbacks per state */
-  statesCustomConfig = () => {
-    return {
-      "NJ": {
-        fill: "navy",
-        clickHandler: (event) => console.log('Custom handler for NJ', event.target.dataset)
-      },
-      "NY": {
-        fill: "#CC0000"
-      }
-    };
-  };
- 
+import './App.css';
+import MapTest from './pages/home.js';
  
   render() {
     return (
       <Router>
         <Navbar />
         <div className="App">
-        <USAMap customize={this.statesCustomConfig()} onClick={this.mapHandler} />
-        </div>
+      <header className="App-header">
+        <MapTest/>
+      </header>
+    </div>
       </Router>
       
     );
   }
-}
 
  
 export default App;
