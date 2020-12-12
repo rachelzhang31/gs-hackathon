@@ -11,7 +11,7 @@ function App(){
         <Navbar />
         <Switch>
           <div class="App-header">
-          <Route path="/" exact component = {MapTest}/>
+          <Route path="/" exact component = {Home}/>
           <Route path="/about" exact component = {About}/>
           </div>
         </Switch>
