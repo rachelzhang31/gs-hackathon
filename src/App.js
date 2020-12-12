@@ -1,19 +1,16 @@
 import React, { Component } from 'react';
-import './App.css';
-import Home from './pages/home.js';
 import USAMap from "react-usa-map";
 import Navbar from './components/Navbar';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import './App.css';
 import MapTest from './pages/home.js';
  
-  render() {
+function App(){
     return (
       <Router>
         <Navbar />
         <div className="App">
       <header className="App-header">
-        <Home/>
         <MapTest/>
       </header>
     </div>
@@ -21,7 +18,6 @@ import MapTest from './pages/home.js';
       
     );
   }
-}
 
  
 export default App;
