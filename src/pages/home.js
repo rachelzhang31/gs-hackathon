@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import USAMap from 'react-usa-map';
-
 class Home extends Component {
     mapHandler = (event) => {
         alert(event.target.dataset.name);
