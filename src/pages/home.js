@@ -25,7 +25,8 @@ class Home extends Component {
             <div className="App">
                 <h1 style={{color: 'black'}}>Covid Impact by State</h1>
                 <USAMap customize={this.statesCustomConfig()} onClick={this.mapHandler} />
-                <h6 style={{color: 'black'}}>Dataset provided by the CDC and accessed via Goldman Sachs's Marquee API</h6>
+                <h1 style={{color: 'black', fontSize: 20}}>Dataset provided by the CDC and accessed via Goldman Sachs's Marquee API</h1>
+
             </div>
         );
     }
