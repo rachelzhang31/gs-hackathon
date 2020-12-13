@@ -49,11 +49,6 @@ function Navbar() {
                 Unemployment
               </Link>
             </li>
-            <li className="nav-item">
-              <Link to="/global" className="nav-links" onClick={closeMobileMenu}>
-                Global
-                </Link>
-                </li>
 
                 <div class="dropdown">
                   <button class="dropbtn">Prisons
@@ -64,6 +59,11 @@ function Navbar() {
                     <a href="/mortalityrates">Mortality Rates</a>
                   </div>
                 </div>
+                <li className="nav-item">
+              <Link to="/global" className="nav-links" onClick={closeMobileMenu}>
+                Global
+                </Link>
+                </li>
             <li className="nav-item">
               <Link to="/about" className="nav-links" onClick={closeMobileMenu}>
                 About
