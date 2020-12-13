@@ -46,7 +46,7 @@ const Global = props => {
 
   return (
     <Grid container style = {{width: '100vw'}} justify = 'space-around' {...rest}>
-      <Grid item xs = {12} md = {10}>
+      <Grid item xs = {12} md = {10} style = {{marginTop: 75}}>
       <GlobalCases data = {data} status = {status} datesList = {datesList}/>
       </Grid>
     </Grid>
