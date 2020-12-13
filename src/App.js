@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
-import USAMap from "react-usa-map";
 import Navbar from './components/Navbar';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import './App.css';
-import MapTest from './pages/home.js';
+import Home from './pages/home.js';
 import About from './pages/about.js';
 function App(){
     return (
@@ -11,7 +10,7 @@ function App(){
         <Navbar />
         <Switch>
           <div class="App-header">
-          <Route path="/" exact component = {MapTest}/>
+          <Route path="/" exact component = {Home}/>
           <Route path="/about" exact component = {About}/>
           </div>
         </Switch>
