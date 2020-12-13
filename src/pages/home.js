@@ -107,31 +107,31 @@ class Home extends Component {
                 clickHandler: (event) => this.setState({ isOpen_AL: true })
             },
             "AK":{
-                fill: "#CC0000",
+                fill: "#28FFF2",
                 clickHandler: (event) => this.setState({ isOpen_AK: true })
             },
             "AR": {
-                fill: "#CC0000",
+                fill: "#BD2020",
                 clickHandler: (event) => this.setState({ isOpen_AR: true })
             },
             "AZ": {
-                fill: "#CC0000",
+                fill: "#2069BD",
                 clickHandler: (event) => this.setState({ isOpen_AZ: true })
             },
             "CA": {
-                fill: "#CC0000",
+                fill: "#2C8CF9",
                 clickHandler: (event) => this.setState({ isOpen_CA: true })
             },
             "CO": {
-                fill: "#CC0000",
+                fill: "#2069BD",
                 clickHandler: (event) => this.setState({ isOpen_CO: true })
             },
             "CT": {
-                fill: "#CC0000",
+                fill: "#2C8CF9",
                 clickHandler: (event) => this.setState({ isOpen_CT: true })
             },
             "DE": {
-                fill: "#CC0000",
+                fill: "#2C8CF9",
                 clickHandler: (event) => this.setState({ isOpen_DE: true })
             },
             "DC": {
@@ -139,23 +139,23 @@ class Home extends Component {
                 clickHandler: (event) => this.setState({ isOpen_DC: true })
             },
             "FL": {
-                fill: "#CC0000",
+                fill: "#2C8CF9",
                 clickHandler: (event) => this.setState({ isOpen_FL: true })
             },
             "GA": {
-                fill: "#CC0000",
+                fill: "#2069BD",
                 clickHandler: (event) => this.setState({ isOpen_GA: true })
             },
             "HI": {
-                fill: "#CC0000",
+                fill: "#2C8CF9",
                 clickHandler: (event) => this.setState({ isOpen_HI: true })
             },
             "ID": {
-                fill: "#CC0000",
+                fill: "#FF0000",
                 clickHandler: (event) => this.setState({ isOpen_ID: true })
             },
             "IL": {
-                fill: "#CC0000",
+                fill: "#2069BD",
                 clickHandler: (event) => this.setState({ isOpen_IL: true })
             },
             "IN": {
@@ -167,7 +167,7 @@ class Home extends Component {
                 clickHandler: (event) => this.setState({ isOpen_IA: true })
             },
             "KS": {
-                fill: "#CC0000",
+                fill: "#BD2020",
                 clickHandler: (event) => this.setState({ isOpen_KS: true })
             },
             "KY": {
@@ -175,27 +175,27 @@ class Home extends Component {
                 clickHandler: (event) => this.setState({ isOpen_KY: true })
             },
             "LA": {
-                fill: "#CC0000",
+                fill: "#2069BD",
                 clickHandler: (event) => this.setState({ isOpen_LA: true })
             },
             "ME": {
-                fill: "#CC0000",
+                fill: "#2069BD",
                 clickHandler: (event) => this.setState({ isOpen_ME: true })
             },
             "MD": {
-                fill: "#CC0000",
+                fill: "#2C8CF9",
                 clickHandler: (event) => this.setState({ isOpen_MD: true })
             },
             "MA": {
-                fill: "#CC0000",
+                fill: "#2C8CF9",
                 clickHandler: (event) => this.setState({ isOpen_MA: true })
             },
             "MI": {
-                fill: "#CC0000",
+                fill: "#28FFF2",
                 clickHandler: (event) => this.setState({ isOpen_MI: true })
             },
             "MN": {
-                fill: "#CC0000",
+                fill: "#2069BD",
                 clickHandler: (event) => this.setState({ isOpen_MN: true })
             },
             "MS": {
@@ -203,94 +203,95 @@ class Home extends Component {
                 clickHandler: (event) => this.setState({ isOpen_MS: true })
             },
             "MO": {
-                fill: "#CC0000",
+                fill: "#BD2020",
                 clickHandler: (event) => this.setState({ isOpen_MO: true })
             },
             "MT": {
-                fill: "#CC0000",
+                fill: "#FF0000",
                 clickHandler: (event) => this.setState({ isOpen_MT: true })
             },
             "NE": {
-                fill: "#CC0000",
+                fill: "#FF0000",
                 clickHandler: (event) => this.setState({ isOpen_NE: true })
             },
             "NV": {
-                fill: "#CC0000",
+                fill: "#28FFF2",
                 clickHandler: (event) => this.setState({ isOpen_NV: true })
             },
             "NH": {
-                fill: "#CC0000",
+                fill: "#2C8CF9",
                 clickHandler: (event) => this.setState({ isOpen_NH: true })
             },
             "NJ": {
-              fill: "navy",
+              fill: "#28FFF2",
               clickHandler: (event) => this.setState({ isOpen_NJ: true })
             },
             "NM": {
-                fill: "#CC0000",
+                fill: "#FF0000",
                 clickHandler: (event) => this.setState({ isOpen_NM: true })
             },
             "NY": {
-              fill: "#CC0000"
+              fill: "#28FFF2",
+              clickHandler: (event) => this.setState({ isOpen_NY: true })
             },
             "NC": {
-                fill: "#CC0000",
+                fill: "#2069BD",
                 clickHandler: (event) => this.setState({ isOpen_NC: true })
             },
             "ND": {
-                fill: "#CC0000",
+                fill: "#FF0000",
                 clickHandler: (event) => this.setState({ isOpen_ND: true })
             },
             "OH": {
-                fill: "#CC0000",
+                fill: "#2069BD",
                 clickHandler: (event) => this.setState({ isOpen_OH: true })
             },
             "OK": {
-                fill: "#CC0000",
+                fill: "#BD2020",
                 clickHandler: (event) => this.setState({ isOpen_OK: true })
             },
             "OR": {
-                fill: "#CC0000",
+                fill: "#2069BD",
                 clickHandler: (event) => this.setState({ isOpen_OR: true })
             },
             "PA": {
-                fill: "#CC0000",
+                fill: "#2069BD",
                 clickHandler: (event) => this.setState({ isOpen_PA: true })
             },
             "RI": {
-                fill: "#CC0000",
+                fill: "#2C8CF9",
                 clickHandler: (event) => this.setState({ isOpen_RI: true })
             },
             "SC": {
-                fill: "#CC0000",
+                fill: "#BD2020",
                 clickHandler: (event) => this.setState({ isOpen_SC: true })
             },
             "SD": {
-                fill: "#CC0000",
+                fill: "#FF0000",
                 clickHandler: (event) => this.setState({ isOpen_SD: true })
             },
             "TN": {
-                fill: "#CC0000",
+                fill: "#2069BD",
                 clickHandler: (event) => this.setState({ isOpen_TN: true })
             },
             "TX": {
-                fill: "#CC0000",
+                fill: "#BD2020",
                 clickHandler: (event) => this.setState({ isOpen_TX: true })
             },
             "UT": {
-                fill: "#CC0000",
+                fill: "#2069BD",
                 clickHandler: (event) => this.setState({ isOpen_UT: true })
             },
             "VT": {
-                fill: "#CC0000",
+                fill: "#2C8CF9",
                 clickHandler: (event) => this.setState({ isOpen_VT: true })
             },
             "VA": {
-                fill: "#CC0000",
+                fill: "#2069BD",
                 clickHandler: (event) => this.setState({ isOpen_VA: true })
             },
             "WA": {
-                fill: "#CC0000",
+                fill: "#2069BD",
                 clickHandler: (event) => this.setState({ isOpen_WA: true })
             },
             "WV": {
@@ -298,11 +299,11 @@ class Home extends Component {
                 clickHandler: (event) => this.setState({ isOpen_WV: true })
             },
             "WI": {
-                fill: "#CC0000",
+                fill: "#2069BD",
                 clickHandler: (event) => this.setState({ isOpen_WI: true })
             },
             "WY": {
-                fill: "#CC0000",
+                fill: "#FF0000",
                 clickHandler: (event) => this.setState({ isOpen_WY: true })
             }
           };
@@ -312,7 +313,7 @@ class Home extends Component {
         return (
         <div>
           <div className="App" style={{marginBottom: '10%', marginTop: '3%'}}>
-            <h1 style={{ color: "black" }}>Covid Impact by State</h1>
+            <h1>Covid Impact by State</h1>
             <USAMap
               customize={this.statesCustomConfig()}
               onClick={this.mapHandler}
@@ -355,7 +356,7 @@ class Home extends Component {
             )}
             {this.state.isOpen_CT && (
                 <Lightbox
-                    mainSrc={'https://github.com/rachelzhang31/gs-hackathon/blob/US-States-Mobility/Connecticut%20Mobility.png'}
+                    mainSrc={'https://github.com/rachelzhang31/gs-hackathon/blob/US-States-Mobility/Connecticut%20Mobility.png?raw=true'}
                     onCloseRequest={() => this.setState({isOpen_CT: false})}
                 />
             )}
@@ -433,7 +434,7 @@ class Home extends Component {
             )}
             {this.state.isOpen_ME && (
                 <Lightbox
-                    mainSrc={'https://github.com/rachelzhang31/gs-hackathon/blob/US-States-Mobility/Maine%20Mobility.png'}
+                    mainSrc={'https://github.com/rachelzhang31/gs-hackathon/blob/US-States-Mobility/Maine%20Mobility.png?raw=true'}
                     onCloseRequest={() => this.setState({isOpen_ME: false})}
                 />
             )}
@@ -445,13 +446,13 @@ class Home extends Component {
             )}
             {this.state.isOpen_MA && (
                 <Lightbox
-                    mainSrc={'https://github.com/rachelzhang31/gs-hackathon/blob/US-States-Mobility/Massachusetts%20Mobility.png'}
+                    mainSrc={'https://github.com/rachelzhang31/gs-hackathon/blob/US-States-Mobility/Massachusetts%20Mobility.png?raw=true'}
                     onCloseRequest={() => this.setState({isOpen_MA: false})}
                 />
             )}
             {this.state.isOpen_MI && (
                 <Lightbox
-                    mainSrc={'https://github.com/rachelzhang31/gs-hackathon/blob/US-States-Mobility/Michigan%20Mobility.png'}
+                    mainSrc={'https://github.com/rachelzhang31/gs-hackathon/blob/US-States-Mobility/Michigan%20Mobility.png?raw=true'}
                     onCloseRequest={() => this.setState({isOpen_MI: false})}
                 />
             )}
@@ -469,7 +470,7 @@ class Home extends Component {
             )}
             {this.state.isOpen_MO && (
                 <Lightbox
-                    mainSrc={'https://github.com/rachelzhang31/gs-hackathon/blob/US-States-Mobility/Missouri%20Mobility.png'}
+                    mainSrc={'https://github.com/rachelzhang31/gs-hackathon/blob/US-States-Mobility/Missouri%20Mobility.png?raw=true'}
                     onCloseRequest={() => this.setState({isOpen_MO: false})}
                 />
             )}
@@ -623,13 +624,9 @@ class Home extends Component {
                     onCloseRequest={() => this.setState({isOpen_WY: false})}
                 />
             )}
-            <h6 style={{ color: "black" }}>
-              State-by-State Analysis Combines Data from the Google Maps 2020 Mobility Reports 
+            <h6 style={{ color: "black", marginLeft: '5%', marginRight: '5%', marginTop: '2%' }}>
+              States are color-coded with respect to degree of social distancing according to mobility data from Unacast,  where the lightest blue states distanced most heavily, and the lightest red states distanced least heavily.  Click on an individual state for specialized traffic data attained via Google Maps mobility reports. 
             </h6>
-          </div>
-          <div>
-              <h1 style={{fontSize: 25}}>Unemployment Rate by Ethnicity 2017-2020</h1>
-              <LineChart/>
           </div>
           </div>
         );

@@ -33,7 +33,7 @@ function Navbar() {
           <div className="navbar-container container">
             <Link to='/' className="navbar-logo" onClick={closeMobileMenu}>
               <RiVirusFill className='navbar-icon'/>
-              COVID-19 and Unemployment in the US
+              COVID-19 Insights
               </Link> 
               <div className="menu-icon" onClick = {handleClick}>
                 {click ? <FaTimes /> : <FaBars />}
@@ -41,7 +41,12 @@ function Navbar() {
           <ul className={click ? 'nav-menu active' : 'nav-menu'}>
             <li className="nav-item">
               <Link to="/" className="nav-links" onClick={closeMobileMenu}>
-                Home
+                Overview
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link to="/unemployment" className="nav-links" onClick={closeMobileMenu}>
+                Unemployment
               </Link>
             </li>
             <li className="nav-item">

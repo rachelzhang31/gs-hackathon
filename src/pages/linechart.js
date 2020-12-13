@@ -166,8 +166,8 @@ class LineChart extends Component {
 
     render() {
       const theme = {
-        "background": "#64A8F0",
-    "textColor": "#ffffff",
+        "background": "#FFFFFF",
+    "textColor": "#000000",
     "fontSize": 12,
     "axis": {
         "domain": {
@@ -192,7 +192,7 @@ class LineChart extends Component {
       }
         return(
             <div>
-              <div style={{height: 400, width: 1000}}>
+              <div style={{height: 600, width: 1500}}>
                 <ResponsiveLine
                     data={this.state.data}
                     margin={{ top: 50, right: 110, bottom: 50, left: 60 }}

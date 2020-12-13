@@ -19,7 +19,7 @@ path:hover {
 
 }
 .App-header {
-  background-color: #64A8F0;
+  background-color: #FFFFFF;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -30,5 +30,5 @@ path:hover {
   color: black;
 }
 h1, h2, h3, h6, p{
-  color:white !important;
+  color:black !important;
 }
