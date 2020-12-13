@@ -41,7 +41,7 @@ function Navbar() {
           <ul className={click ? 'nav-menu active' : 'nav-menu'}>
             <li className="nav-item">
               <Link to="/" className="nav-links" onClick={closeMobileMenu}>
-                Overview
+                Mobility
               </Link>
             </li>
             <li className="nav-item">
@@ -54,16 +54,16 @@ function Navbar() {
                 Global
                 </Link>
                 </li>
-                <li className = 'nav-item'>
-              <Link to="/caserates" className="nav-links" onClick={closeMobileMenu}>
-                Case Rates
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link to="/mortalityrates" className="nav-links" onClick={closeMobileMenu}>
-                Mortality Rates
-              </Link>
-            </li>
+
+                <div class="dropdown">
+                  <button class="dropbtn">Prisons
+                    <i class="fa fa-caret-down"></i>
+                  </button>
+                  <div class="dropdown-content">
+                    <a href="/caserates">Case Rates</a>
+                    <a href="/mortalityrates">Mortality Rates</a>
+                  </div>
+                </div>
             <li className="nav-item">
               <Link to="/about" className="nav-links" onClick={closeMobileMenu}>
                 About
