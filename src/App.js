@@ -11,9 +11,9 @@ function App(){
       <Router>
         <Navbar />
         <Switch>
-          <div class="App-header">
+          <div className="App-header">
           <Route path="/" exact component = {MapTest}/>
-          <Route path="/prison" exact component = {Prison}/>
+          <Route path="/caserates" exact component = {Prison}/>
           <Route path="/about" exact component = {About}/>
           </div>
         </Switch>

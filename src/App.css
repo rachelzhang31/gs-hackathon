@@ -26,5 +26,8 @@ path:hover {
   text-align: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color:black;
+}
+h1, h2, h3, h6, p{
+  color:white !important;
 }
