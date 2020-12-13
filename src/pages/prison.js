@@ -1,74 +1,57 @@
-import { ResponsiveGeoMap } from "@nivo/geo";
-import { ResponsiveGeoMapCanvas } from "@nivo/geo";
 import { ResponsiveChoropleth } from "@nivo/geo";
-import { Choropleth } from "@nivo/geo";
 import countries from "./usmap.json";
-import data from "./data";
-import React, { Component } from 'react';
+import prisondata from "./prisoncaserate.js";
+import generaldata from "./generalcaserate.js";
+import React from 'react';
 
 function Prison () {
 
+
+
+
     return (
-      <div className="Prison">
+      <div   className="Prison">
         <div style={{ height: "1000px" }}>
-          <MyResponsiveChoropleth data={data} />
+          <br ></br>
+          <h1 >Prison Case Rates</h1>
+          <h6><a href="#General">View General Case Rates</a></h6>
+          <MyResponsiveChoropleth data={prisondata} />
         </div>
-        <hr />
-        {/* <div style={{ height: "400px" }}>
-          <MyResponsiveGeoMap />
+        <div id="General"style={{ height: "1000px" }}>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+        <h1>General Case Rates</h1>
+        <h6><a href="#top">View Prison Case Rates</a></h6>
+          <MyResponsiveChoropleth data={generaldata} />
         </div>
-        <hr />
-        <div style={{ height: "400px" }}>
-          <MyResponsiveGeoMapCanvas />
-        </div> */}
-      </div>
+        <p>According to an analysis of state prison coronavirus cases by The Marshall Project, a nonprofit investigative newsroom dedicated to the U.S. criminal justice system, and The Associated Press.</p>
+    </div>  
     );
   
 }
-const MyResponsiveGeoMap = () => (
-  <ResponsiveGeoMap
-    features={countries.features}
-    projectionTranslation={[0.5, 0.5]}
-    fillColor="#eeeeee"
-    borderWidth={0.5}
-    borderColor="#333333"
-    enableGraticule={false}
-    graticuleLineColor="#666666"
-    domain={[0, 1000000]}
-  />
-);
 
-const MyResponsiveGeoMapCanvas = () => (
-  <ResponsiveGeoMapCanvas
-    features={countries.features}
-    projectionTranslation={[0.5, 0.5]}
-    fillColor="#eeeeee"
-    borderWidth={0.5}
-    borderColor="#333333"
-    enableGraticule={false}
-    graticuleLineColor="#666666"
-    domain={[0, 1000000]}
-  />
-);
+
 
 const MyResponsiveChoropleth = ({ data }) => (
   <ResponsiveChoropleth
     data={data}
-    domain={[0, 1000000]}
+    domain={[0, 80000]}
     features={countries.features}
-    colors="nivo"
+    colors="reds"
     unknownColor="#666666"
     label="properties.name"
     valueFormat=".2s"
-    projectionTranslation={[1.2,0.8]}
+    projectionTranslation={[1.6,0.9]}
     enableGraticule={false}
     graticuleLineColor="#dddddd"
     borderWidth={0.5}
     borderColor="#152538"
-    projectionScale={400}
+    projectionScale={800}
     legends={[
       {
-        anchor: "center",
+        anchor: "left",
         direction: "column",
         justify: true,
         itemsSpacing: 0,
@@ -77,14 +60,14 @@ const MyResponsiveChoropleth = ({ data }) => (
         translateX: 20,
         translateY: -100,
         itemDirection: "left-to-right",
-        itemTextColor: "#444444",
-        itemOpacity: 0.85,
+        itemTextColor: "#ffffff",
+        itemOpacity: 1,
         symbolSize: 18,
         effects: [
           {
             on: "hover",
             style: {
-              itemTextColor: "#000000",
+              itemTextColor: "#ffffff",
               itemOpacity: 1
             }
           }

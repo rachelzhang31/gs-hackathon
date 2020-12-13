@@ -5,7 +5,8 @@ class About extends Component {
 
     render() {
         return (
-            <div className="App">
+            <div className="App-header">
+                <br></br>
                 <h1 style={{color: 'black'}}>About</h1>
                 <h3 style={{display:'inline-block', margin:'10px'}}>Team Members:</h3>
                 <p style={{display:'inline-block'}}>Cindy Ding, Charles Kraemer, Cory Milsap, and Rachel Zhang</p>

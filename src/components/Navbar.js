@@ -43,8 +43,8 @@ function Navbar() {
               </Link>
             </li>
             <li className="nav-item">
-              <Link to="/prison" className="nav-links" onClick={closeMobileMenu}>
-                Prison Rates
+              <Link to="/caserates" className="nav-links" onClick={closeMobileMenu}>
+                Case Rates
               </Link>
             </li>
             <li className="nav-item">
