@@ -1,14 +1,15 @@
 import React, { Component } from 'react';
-import USAMap from "react-usa-map";
 import Navbar from './components/Navbar';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import './App.css';
-import MapTest from './pages/home.js';
+import Home from './pages/home.js';
 import About from './pages/about.js';
 import Global from './pages/global.js';
 
 import { FirebaseContext } from './components/Firebase';
 
+import Prison from './pages/prison.js';
+import Mortality from './pages/mortality.js';
 function App(){
     return (
       <Router>
@@ -16,6 +17,8 @@ function App(){
         <Switch>
           <div class="App-header">
             <Route path="/about" exact component={About} />
+            <Route path="/caserates" exact component={Prison} />
+            <Route path="/mortalityrates" exact component={Mortality} />
             <Route path="/global">
               <FirebaseContext.Consumer>
                 {(firebase) => <Global firebase={firebase} />}
