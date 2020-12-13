@@ -1,19 +1,37 @@
 import React, { Component } from 'react';
-import USAMap from 'react-usa-map';
 
 // Firebase
 import {FirebaseContext} from '../components/Firebase';
+
+// Custom Components
+import USAMap from 'react-usa-map';
 
 const APIButton = props => {
     const {firebase, ...rest} = props;
 
     const getCovidData = firebase.app.functions().httpsCallable('getCovidData');
-    const handleAPICall = async () => {
-        const response = await getCovidData();
-        console.log(response);
+    const handleClick = async provider => {
+        const response = await getCovidData({dataset: provider});
+
+        if (response.data) {
+          const data = JSON.parse(response.data);
+          console.log(data);
+        }
+        else {
+          console.error('getCovidData failed');
+        }
+
+        
     }
     return (
-        <button onClick = {handleAPICall} {...rest}>Call API </button>
+      <>
+        <button onClick={() => handleClick("cdc")} {...rest}>
+          Get CDC Data
+        </button>
+        <button onClick={() => handleClick("who")} {...rest}>
+          Get WHO Data
+        </button>
+      </>
     );
 }
 class Home extends Component {
