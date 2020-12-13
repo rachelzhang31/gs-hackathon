@@ -105,7 +105,7 @@ const Choropleth = props => {
       theme = {{
         background: '#D3D3D3'
       }}
-      domain={[legendMax / 4, legendMax]}
+      domain={[0, legendMax]}
     />
   );
       }
