@@ -166,7 +166,7 @@ class LineChart extends Component {
 
     render() {
       const theme = {
-        "background": "#000000",
+        "background": "#64A8F0",
     "textColor": "#ffffff",
     "fontSize": 12,
     "axis": {
