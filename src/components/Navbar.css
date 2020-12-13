@@ -1,5 +1,5 @@
 .navbar {
-    background: #64A8F0;
+    background: black;
     height: 80px;
     display: flex;
     justify-content: center;
@@ -14,6 +14,7 @@
     display: flex;
     justify-content: space-between;
     height: 80px;
+    border-bottom: 1px solid grey;
   }
   
   .container {
@@ -55,7 +56,7 @@
   }
   
   .nav-item:hover {
-    border-bottom: 2px solid #fefd97;
+    border-bottom: 2px solid #64a8f0;
   }
   
   .nav-links {
