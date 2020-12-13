@@ -607,7 +607,7 @@ class Home extends Component {
                 />
             )}
             <h6 style={{ color: "black" }}>
-              State-by-State Analysis Combines Data Google's Google Maps Mobility Reports, 
+              State-by-State Analysis Combines Data from the Google Maps 2020 Mobility Reports 
             </h6>
           </div>
           <div>
