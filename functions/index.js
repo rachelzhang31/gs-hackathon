@@ -15,7 +15,8 @@ const credentials = {
 };
 
 
-const callApi = async (t) => {
+const getCDCData = async (t) => {
+  functions.logger.log('in getCDCData');
   const opts = {
     headers: {
       Authorization: "Bearer " + t.token.access_token,
@@ -32,8 +33,7 @@ const callApi = async (t) => {
 
     try {
       const {body} = await got.post("https://api.marquee.gs.com/v1/data/COVID19_US_DAILY_CDC/query", opts)
-      functions.logger.log('body', body);
-
+    functions.logger.log('body is', body);
       return body;
 
     }
@@ -43,19 +43,47 @@ const callApi = async (t) => {
     }
 };
 
+const getWHOData = async (t) => {
+  const args = {
+      "headers": {
+          "Authorization": "Bearer " + t.token.access_token,
+          "Content-Type": "application/json"
+      },
+      "body": JSON.stringify({
+              "where": {
+                  "countryId": ["CN", "US", "GB", "CA", "BR", "RU", "DE", "OM", "MH"]
+              },
+              "startDate": "2020-03-01",
+              "limit": 100
+         }),
+  };
+  try {
+    const {body} = await got.post("https://api.marquee.gs.com/v1/data/COVID19_COUNTRY_DAILY_WHO/query", args)
+    functions.logger.log('body is', body);
+    return body;
 
-exports.getCovidData = functions.https.onCall( async (req, res) => {
+  }
+  catch (error) {
+    functions.logger.error('API Call Error', error);
+    return error;
+  }
+};
+
+exports.getCovidData = functions.https.onCall( async (data, context) => {
+  const { dataset } = data;
   const client = new oauth2.ClientCredentials(credentials);
 
   try {
     const token = await client.getToken(credentials);
-    const apiResponse = await callApi(token);
 
-    functions.logger.log("apiResponse", apiResponse);
+    let apiResponse = null;
+
+    functions.logger.log('dataset is ', dataset);
+    if (dataset === "cdc") apiResponse = await getCDCData(token);
+    else if (dataset === "who") apiResponse = await getWHOData(token);
+
     return apiResponse;
   } catch (error) {
     functions.logger.error("API Error", error.message);
-
-
   }
 });

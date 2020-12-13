@@ -4,20 +4,30 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import './App.css';
 import Home from './pages/home.js';
 import About from './pages/about.js';
+import Global from './pages/global.js';
+
+import { FirebaseContext } from './components/Firebase';
+
 import Prison from './pages/prison.js';
+import Mortality from './pages/mortality.js';
 function App(){
     return (
       <Router>
         <Navbar />
         <Switch>
-          <div className="App-header">
-          <Route path="/" exact component = {Home}/>
-          <Route path="/caserates" exact component = {Prison}/>
-          <Route path="/about" exact component = {About}/>
+          <div class="App-header">
+            <Route path="/about" exact component={About} />
+            <Route path="/caserates" exact component={Prison} />
+            <Route path="/mortalityrates" exact component={Mortality} />
+            <Route path="/global">
+              <FirebaseContext.Consumer>
+                {(firebase) => <Global firebase={firebase} />}
+              </FirebaseContext.Consumer>
+            </Route>
+            <Route path="/" exact component={Home} />
           </div>
         </Switch>
       </Router>
-      
     );
   }
 
