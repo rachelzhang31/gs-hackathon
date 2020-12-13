@@ -7,8 +7,6 @@ import 'react-image-lightbox/style.css';
 // Firebase
 import {FirebaseContext} from '../components/Firebase';
 
-// Custom Components
-import USAMap from 'react-usa-map';
 
 const APIButton = props => {
     const {firebase, ...rest} = props;

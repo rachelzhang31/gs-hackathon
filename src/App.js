@@ -24,7 +24,7 @@ function App(){
                 {(firebase) => <Global firebase={firebase} />}
               </FirebaseContext.Consumer>
             </Route>
-            <Route path="/" exact component={MapTest} />
+            <Route path="/" exact component={Home} />
           </div>
         </Switch>
       </Router>
