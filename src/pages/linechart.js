@@ -162,22 +162,48 @@ class LineChart extends Component {
               ]
         }
     }
+    
 
     render() {
+      const theme = {
+        "background": "#000000",
+    "textColor": "#ffffff",
+    "fontSize": 12,
+    "axis": {
+        "domain": {
+            "line": {
+                "stroke": "#777777",
+                "strokeWidth": 1
+            }
+        },
+        "ticks": {
+            "line": {
+                "stroke": "#777777",
+                "strokeWidth": 1
+            }
+        }
+    },
+    "grid": {
+        "line": {
+            "stroke": "#dddddd",
+            "strokeWidth": 1
+        }
+    }
+      }
         return(
             <div>
               <div style={{height: 400, width: 1000}}>
                 <ResponsiveLine
                     data={this.state.data}
                     margin={{ top: 50, right: 110, bottom: 50, left: 60 }}
+                    theme={theme}
                     xScale={{ type: 'point' }}
                     yScale={{ type: 'linear', min: '0', max: '16', stacked: false, reverse: false }}
                     yFormat=" >-.2f"
-                    axisTop={null}
                     axisRight={null}
                     axisBottom={{
                         orient: 'bottom',
-                        tickSize: 5,
+                        tickSize: 10,
                         tickPadding: 5,
                         tickRotation: 0,
                         legend: 'Date',
@@ -191,7 +217,8 @@ class LineChart extends Component {
                         tickRotation: 0,
                         legend: 'Unemployment Rate',
                         legendOffset: -40,
-                        legendPosition: 'middle'
+                        legendPosition: 'middle',
+                        color: 'white'
                     }}
                     pointSize={10}
                     pointColor={{ theme: 'background' }}

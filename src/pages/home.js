@@ -294,10 +294,7 @@ class Home extends Component {
     render() {
         return (
         <div>
-          <div className="App" style={{marginBottom: 10}}>
-            <FirebaseContext.Consumer>
-              {(firebase) => <APIButton firebase={firebase} />}
-            </FirebaseContext.Consumer>
+          <div className="App" style={{marginBottom: '10%', marginTop: '3%'}}>
             <h1 style={{ color: "black" }}>Covid Impact by State</h1>
             <USAMap
               customize={this.statesCustomConfig()}
@@ -371,7 +368,7 @@ class Home extends Component {
             )}
             {this.state.isOpen_HI && (
                 <Lightbox
-                    mainSrc={'https://github.com/rachelzhang31/gs-hackathon/blob/US-States-Mobility/Hawaii%20Mobility.png'}
+                    mainSrc={'https://github.com/rachelzhang31/gs-hackathon/blob/US-States-Mobility/Hawaii%20Mobility.png?raw=true'}
                     onCloseRequest={() => this.setState({isOpen_HI: false})}
                 />
             )}
@@ -610,11 +607,11 @@ class Home extends Component {
                 />
             )}
             <h6 style={{ color: "black" }}>
-              Dataset provided by the CDC and accessed via Goldman Sachs's
-              Marquee API
+              State-by-State Analysis Combines Data Google's Google Maps Mobility Reports, 
             </h6>
           </div>
           <div>
+              <h1 style={{fontSize: 25}}>Unemployment Rate by Ethnicity 2017-2020</h1>
               <LineChart/>
           </div>
           </div>
